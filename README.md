@@ -61,7 +61,7 @@ Fetches a list of car makes to populate the search form
 Retrieves car models based on the selected make and production year
 
 - Endpoint: /api/vehicles/GetModelsForMakeIdYear.
-- Method: POST.
+- Method: GET.
 - Request Body:
 {
   "make": "seelectedMake",
