@@ -41,23 +41,36 @@ const LandingPage = () => {
 
   return (
     <div>
-      <div>
-        <motion.img
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="flex flex-row items-center justify-center md:mt-16 mt-4"
+      >
+        <img
           src="/search.png"
           alt="Search"
-          className="md:justify-center mx-auto w-48 h-48 md:w-56 md:h-auto object-cover md:mt-4 md:mb-0 mb-0"
+          className="md:justify-center w-36 h-36 md:w-56 md:h-auto object-cover md:mt-0 mb-0"
           style={{
             filter: "drop-shadow(0px 0px 6px rgba(255, 0, 255, 0.9))",
           }}
         />
+        <h2
+          className="md:text-6xl text-4xl text-white font-fredoka font-bold"
+          style={{
+            filter: "drop-shadow(0px 0px 6px rgba(255, 0, 255, 0.9))",
+          }}
+        >
+          {" "}
+          CAR DEALER APP
+        </h2>
+      </motion.div>
+      <div>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-5xl text-white font-fredoka text-center md:mt-4 mt-0"
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="md:text-5xl text-4xl text-white font-fredoka text-center md:mt-24 mt-8"
         >
           Welcome to the Vehicle Filter!
         </motion.h2>
@@ -65,9 +78,9 @@ const LandingPage = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
       >
-        <h2 className="flex w-5/6 md:text-2xl text-xl text-white font-Roboto justify-center items-center m-auto md:mt-12 mt-12 md:mb-36 mb-12">
+        <h2 className="flex w-5/6 md:text-2xl text-xl text-white font-Roboto justify-center items-center m-auto md:mt-8 mt-2 md:mb-12 mb-12">
           You can find some models, selecting the Make and the year of
           production.
         </h2>
@@ -76,7 +89,7 @@ const LandingPage = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
+        transition={{ delay: 1.2, duration: 0.9 }}
         className="flex md:flex-row flex-col md:w-3/6 w-5/6 md:p-4 p-2 justify-center m-auto rounded-3xl md:space-x-8"
         style={{
           background:
@@ -149,7 +162,7 @@ const LandingPage = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.9 }}
+          transition={{ delay: 1.5, duration: 0.9 }}
           className="flex md:justify-center md:items-center m-auto md:mt-4 mt-4"
         >
           <Button
