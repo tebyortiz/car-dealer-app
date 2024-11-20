@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@nextui-org/react";
 import SuspenseSpinner from "./SuspenseSpinner";
+import { motion } from "framer-motion";
 
 interface VehicleModel {
   Make_ID: number;
@@ -39,17 +40,32 @@ const ResultPage = () => {
   return (
     <SuspenseSpinner>
       <div className="p-6">
-        <h1 className="text-3xl text-white font-fredoka text-center md:mt-24 mt-12 md:mb-12 mb-8">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="text-3xl text-white font-fredoka text-center md:mt-24 mt-12 md:mb-12 mb-8"
+        >
           Vehicle Models of {year}
-        </h1>
+        </motion.h1>
 
         {error && (
-          <p className="text-red-500 text-xl font-fredoka text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="text-red-500 text-xl font-fredoka text-center"
+          >
             {error}
-          </p>
+          </motion.p>
         )}
 
-        <div className="flex flex-wrap justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="flex flex-wrap justify-center"
+        >
           {models.length > 0 ? (
             models.map((model) => (
               <div
@@ -72,15 +88,20 @@ const ResultPage = () => {
               No models found for this make and year.
             </p>
           )}
-        </div>
-        <div className="flex md:justify-center items-center m-auto md:mt-4 mt-4">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.5 }}
+          className="flex md:justify-center items-center m-auto md:mt-4 mt-4"
+        >
           <Button
             onClick={() => navigate("/")}
             className="m-auto justify-center w-3/6 md:w-1/6 text-2xl text-white font-fredoka bg-secondary bg-opacity-60 md:mt-8"
           >
             Back
           </Button>
-        </div>
+        </motion.div>
       </div>
     </SuspenseSpinner>
   );

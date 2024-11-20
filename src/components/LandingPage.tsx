@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Button, Select, SelectItem } from "@nextui-org/react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface VehicleMake {
   MakeId: number;
@@ -41,18 +42,41 @@ const LandingPage = () => {
   return (
     <div>
       <div>
-        <h2 className="text-5xl text-white font-fredoka text-center md:mt-48 mt-24">
+        <motion.img
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          src="/search.png"
+          alt="Search"
+          className="md:justify-center mx-auto w-48 h-48 md:w-56 md:h-auto object-cover md:mt-4 md:mb-0 mb-0"
+          style={{
+            filter: "drop-shadow(0px 0px 6px rgba(255, 0, 255, 0.9))",
+          }}
+        />
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="text-5xl text-white font-fredoka text-center md:mt-4 mt-0"
+        >
           Welcome to the Vehicle Filter!
-        </h2>
+        </motion.h2>
       </div>
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
         <h2 className="flex w-5/6 md:text-2xl text-xl text-white font-Roboto justify-center items-center m-auto md:mt-12 mt-12 md:mb-36 mb-12">
           You can find some models, selecting the Make and the year of
           production.
         </h2>
-      </div>
+      </motion.div>
 
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
         className="flex md:flex-row flex-col md:w-3/6 w-5/6 md:p-4 p-2 justify-center m-auto rounded-3xl md:space-x-8"
         style={{
           background:
@@ -120,9 +144,14 @@ const LandingPage = () => {
             </Select>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div>
-        <div className="flex md:justify-center md:items-center m-auto md:mt-4 mt-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.9 }}
+          className="flex md:justify-center md:items-center m-auto md:mt-4 mt-4"
+        >
           <Button
             isDisabled={!selectedMake || !selectedYear}
             className="m-auto justify-center w-3/6 bg-secondary bg-opacity-60"
@@ -134,7 +163,7 @@ const LandingPage = () => {
               Next
             </Link>
           </Button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
